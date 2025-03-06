@@ -1,5 +1,6 @@
 AUTO DRIVING CAR
 
+CASES:
 Part 1
  You're working on a brand new auto driving car to compete against Tesla. You've already gotten the prototype
  car working but rather primitively.
@@ -54,3 +55,57 @@ If we deploy these two cars at the same time, will they collide into each other 
 This means that car A and B will collide into each other at (5,4) at 7th step.
  If there is no collision, simply output the following:
  no collision
+
+
+How to Setup and Test:
+
+	Copy and paste the PowerShell script file into your local folder (e.g., C:\AutoScripts).
+ It is recommended to create the same folder name and place the script inside this folder for easier execution.
+
+The PowerShell Script Explanation:
+The PowerShell script will automatically execute the necessary steps to run and test the project:
+a.	Automated create Project Folders
+b.	Automated clone source code from GitHub repos:
+https://github.com/Overcomer21/autocar-driving-test.git
+c.	Automated installation Pre-requisite Components
+i.	Node.js
+ii.	TypeScript
+d.	Automated Build The Project
+e.	Automated Auto Test
+f.	Automated Generate Log File
+
+
+Simply Run the PowerShell script:
+•	Copy and paste power scripts to your local folder (eg C:\AutoScripts)
+•	Open WindowsPowerShell and Run as Administrator 
+
+
+5.	Programming Code Explanation
+
+Recommended Program Code: Adheres to Clean Code principles, strong Object-Oriented programming skills, and follows SOLID design principles.
+A.	Clean Code, Object-Oriented Skills, and SOLID Principles:
+	Encapsulation: 
+	CarColl and Car classes encapsulate 
+
+	Single Responsibility Principle (SRP):
+	Each class has a distinct function (Car handles movement, CarColl manages collision detection).
+	Moves, collisions, and updates are separated into distinct steps, making the code more readable and logically structured.
+
+	Open/Closed Principle (OCP): 
+	New behaviours (such as additional movement types) can be added with minimal modifications
+	More structured approach, easier to extend, makes future enhancements easier.
+
+	Liskov Substitution Principle (LSP):
+	Car and CarColl classes compatible are designed to be compatible with potential subclasses or alternative implementations without affecting the system's integrity
+
+	Performance
+	New Uses a tentative positions map for efficient validation. Uses tentative state tracking, avoiding unnecessary position overwrites.
+
+	Collision Handling
+	Uses filtered existingCars list to avoid redundant checks. Utilizes .filter() and .map() to identify existing cars at the new position.
+
+B.	Include Unit Tests (TDD Approach)
+•	Unit tests are included in the provided test files:
+o	carCollision.test.js: Tests for multiple cars and collision detection.
+o	carSingleCarCollision.test.js
+
